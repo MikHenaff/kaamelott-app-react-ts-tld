@@ -14,13 +14,20 @@
   }
 
   body {
+    min-height: 100vh;
+    position: relative;
     font-family: "Crimson Text", serif;
     background-color: #000;
     color: #faebd7;
   }
 
   h1,
-  h2 {
+  h2,
+  .footer span {
     font-family: "MedievalSharp", cursive;
+  }
+
+  h2 span {
+    font-family: "Crimson Text", serif;
   }
 }
