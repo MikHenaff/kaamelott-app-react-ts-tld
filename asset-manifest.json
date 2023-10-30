@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/kaamelott-app-react-ts-tld/static/css/main.491a5c0c.css",
+    "main.js": "/kaamelott-app-react-ts-tld/static/js/main.af8d8463.js",
+    "static/media/kaamelott-logo.png": "/kaamelott-app-react-ts-tld/static/media/kaamelott-logo.a2fc4b8a22c3ed62cb58.png",
+    "index.html": "/kaamelott-app-react-ts-tld/index.html",
+    "main.491a5c0c.css.map": "/kaamelott-app-react-ts-tld/static/css/main.491a5c0c.css.map",
+    "main.af8d8463.js.map": "/kaamelott-app-react-ts-tld/static/js/main.af8d8463.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.491a5c0c.css",
+    "static/js/main.af8d8463.js"
+  ]
+}
