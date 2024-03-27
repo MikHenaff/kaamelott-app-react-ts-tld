@@ -17,8 +17,13 @@ function App() {
   const [infos, setInfos] = useState<Infos>({} as Infos);
   const [quotation, setQuotation] = useState<string>("");
 
+  const options: any = {
+    method: "GET",
+    mode: "no-cors",
+  };
+
   async function fetchData() {
-    const response = await fetch("/random");
+    const response = await fetch("/random", options);
     const data = await response.json();
     setInfos(data.citation.infos);
     setQuotation(data.citation.citation);
@@ -31,7 +36,7 @@ function App() {
   const picture: string = `https://kaamelott.chaudie.re/api/personnage/${name}/pic`;
 
   async function fetchRandom(name: string) {
-    axios.get(`/random/personnage/${name}`).then((response) => {
+    axios.get(`/random/personnage/${name}`, options).then((response) => {
       setInfos(response.data.citation.infos);
       setQuotation(response.data.citation.citation);
     });
