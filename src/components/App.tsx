@@ -4,6 +4,7 @@ import Card from "./Card";
 import CallRandomQuotationButton from "./CallRandomQuotationButton";
 import CallRandomCharacterQuotationButton from "./CallRandomCharacterQuotationButton";
 import Footer from "./Footer";
+import axios from "axios";
 
 type Infos = {
   personnage: string;
@@ -17,9 +18,7 @@ function App() {
   const [quotation, setQuotation] = useState<string>("");
 
   async function fetchData() {
-    const url = `https://kaamelott.chaudie.re/api/random`;
-
-    const response = await fetch(url);
+    const response = await fetch("/random");
     const data = await response.json();
     setInfos(data.citation.infos);
     setQuotation(data.citation.citation);
@@ -32,12 +31,10 @@ function App() {
   const picture: string = `https://kaamelott.chaudie.re/api/personnage/${name}/pic`;
 
   async function fetchRandom(name: string) {
-    const response = await fetch(
-      `https://kaamelott.chaudie.re/api/random/personnage/${name}`
-    );
-    const data = await response.json();
-    setInfos(data.citation.infos);
-    setQuotation(data.citation.citation);
+    axios.get(`/random/personnage/${name}`).then((response) => {
+      setInfos(response.data.citation.infos);
+      setQuotation(response.data.citation.citation);
+    });
   }
 
   return (
